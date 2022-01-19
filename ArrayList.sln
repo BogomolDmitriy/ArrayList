@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayListMain", "ArrayList\ArrayListMain.csproj", "{4B987611-AA87-49F0-83A1-B591BE0F030F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayListLibrary1", "ArrayListLibrary1\ArrayListLibrary1.csproj", "{FB07A0A8-4438-415D-8F1F-D91022B51E86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayListLibrary", "ArrayListLibrary1\ArrayListLibrary.csproj", "{FB07A0A8-4438-415D-8F1F-D91022B51E86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayListTest", "ArrayListTest\ArrayListTest.csproj", "{3B9CE96E-24CE-4EE2-9DE9-2CC3FDD10443}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArrayListTest", "ArrayListTest\ArrayListTest.csproj", "{3B9CE96E-24CE-4EE2-9DE9-2CC3FDD10443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ArrayListLibrary1
+namespace ArrayListLibrary
 {
     public class ArrayList
     {

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ArrayListLibrary1\ArrayListLibrary1.csproj" />
+    <ProjectReference Include="..\ArrayListLibrary1\ArrayListLibrary.csproj" />
   </ItemGroup>
 
 </Project>

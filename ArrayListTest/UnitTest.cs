@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using ArrayListLibrary1;
+using ArrayListLibrary;
 
 namespace ArrayListTest
 {
@@ -32,7 +32,6 @@ namespace ArrayListTest
         [TestCase(new[] { 6, 0, 4}, 0, new[] { 0, 6, 0, 4 })]
         [TestCase(new[] { 6, 0, 4, 7, 8, -76, 987, -1, 0, 786 }, 0, new[] { 0, 6, 0, 4, 7, 8, -76, 987, -1, 0, 786 })]
         [TestCase(new[] { 0 }, 8, new[] { 8, 0 })]
-
         public void AddStart_AddingAValueToTheBeginning (int[] sourceArray, int value, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -42,7 +41,6 @@ namespace ArrayListTest
             }
 
             arrayList.AddStart(value);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -55,7 +53,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, 7, 8, new[] { 1, 2, 3, 4, 5, 6, 7, 8 })]
         [TestCase(new[] { 1 }, 0, 8, new[] { 8, 1 })]
         [TestCase(new[] { 0 }, 0, 0, new[] { 0, 0 })]
-
         public void AddIndex_AddingValueByIndex (int[] sourceArray, int index, int value, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -65,7 +62,6 @@ namespace ArrayListTest
             }
 
             arrayList.AddIndex(index, value);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -75,7 +71,6 @@ namespace ArrayListTest
         //Task 4
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, new[] { 1, 2, 3, 4, 5, 6 })]
         [TestCase(new[] { 8, 8 }, new[] { 8 })]
-
         public void DeleteEnd_RemovingFromTheEndOfOneElement (int[] sourceArray, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -85,7 +80,6 @@ namespace ArrayListTest
             }
 
             arrayList.DeleteEnd();
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -95,7 +89,6 @@ namespace ArrayListTest
         //Task 5
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, new[] { 2, 3, 4, 5, 6, 7 })]
         [TestCase(new[] { 0, 8 }, new[] { 8 })]
-
         public void DeleteStart_RemoveFromTheBeginningOfOneElement (int[] sourceArray, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -105,7 +98,6 @@ namespace ArrayListTest
             }
 
             arrayList.DeleteStart();
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -117,7 +109,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, 6, new[] { 1, 2, 3, 4, 5, 6, })]
         [TestCase(new[] { -1, 0, 65 }, 1, new[] { -1, 65 })]
         [TestCase(new[] { 0, 0, 0, 0, 0 }, 3, new[] { 0, 0, 0, 0 })]
-
         public void DeleteIndex_BeletingByIndexOfOneElement (int[] sourceArray, int index, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -127,7 +118,6 @@ namespace ArrayListTest
             }
 
             arrayList.DeleteIndex(index);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -138,7 +128,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, 0, new[] { 1, 2, 3, 4, 5, 6, 7 })]
         [TestCase(new[] { 8, -2, 0, 4, 854, 3, 7 }, 2, new[] { 8, -2, 0, 4, 854 })]
         [TestCase(new[] { 8, -2, 0, 4, 854, 3, 7 }, 6, new[] { 8 })]
-
         public void deleting_N_ElementsFromTheEnd (int[] sourceArray, int N, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -148,7 +137,6 @@ namespace ArrayListTest
             }
 
             arrayList.removing_N_ElementsFromTheEnd(N);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -159,7 +147,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, 0, new[] { 1, 2, 3, 4, 5, 6, 7 })]
         [TestCase(new[] { 8, -2, 0, 4, 854, 3, 7 }, 2, new[] { 0, 4, 854, 3, 7 })]
         [TestCase(new[] { 8, -2, 0, 4, 854, 3, 7 }, 6, new[] { 7 })]
-
         public void deleting_N_ElementsFromTheStart (int[] sourceArray, int N, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -169,7 +156,6 @@ namespace ArrayListTest
             }
 
             arrayList.removing_N_ElementsFromTheStart(N);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -183,7 +169,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, 3, 4, new[] { 1, 2, 3 })]
         [TestCase(new[] { 8, 4, 1, 9, 547, -5, 78, 0 }, 1, 7, new[] { 8 })]
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 1, 7, new[] { 1, 9 })]
-
         public void deleting_N_ElementsFromTheIndex(int[] sourceArray, int index, int N, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -193,7 +178,6 @@ namespace ArrayListTest
             }
 
             arrayList.removing_N_ElementsFromTheIndex(index, N);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -205,7 +189,6 @@ namespace ArrayListTest
         [TestCase(new[] { 9, 10, 33, 4, 7, -1, 9 }, 2, 185, new[] { 9, 10, 185, 4, 7, -1, 9 })]
         [TestCase(new[] { 9, 10, 33, 4, 7, -1, 9 }, 0, 0, new[] { 0, 10, 33, 4, 7, -1, 9 })]
         [TestCase(new[] { 9, 10, 33, 4, 7, -1, 9 }, 6, 0, new[] { 9, 10, 33, 4, 7, -1, 0 })]
-
         public void ChangeByIndex (int[] sourceArray, int index, int number, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -215,7 +198,6 @@ namespace ArrayListTest
             }
 
             arrayList.changeByIndex(index, number);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -236,7 +218,6 @@ namespace ArrayListTest
             }
 
             arrayList.reverse();
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -249,7 +230,6 @@ namespace ArrayListTest
         [TestCase(new[] { 85, 0, 847, 67, -58 }, 847)]
         [TestCase(new[] { -58, -4, -584, -86 }, -4)]
         [TestCase(new[] { -58, -4, -584, 0, -86 }, 0)]
-
         public void FindTheValueOfTheMaximumElement (int[] sourceArray, int expected)
         {
             ArrayList arrayList = new ArrayList();
@@ -288,7 +268,6 @@ namespace ArrayListTest
         [TestCase(new[] { -58, -4, -584, -86 }, 1)]
         [TestCase(new[] { 58, 4, 0, 86 }, 3)]
         [TestCase(new[] { 598, 4, 0, 86 }, 0)]
-
         public void FindTheIndexOfTheMaximumElement (int[] sourceArray, int expected)
         {
             ArrayList arrayList = new ArrayList();
@@ -308,7 +287,6 @@ namespace ArrayListTest
         [TestCase(new[] { -58, -4, -584, -86 }, 2)]
         [TestCase(new[] { 58, 4, 0, 86 }, 2)]
         [TestCase(new[] { 598, 4, 0, 86, -654 }, 4)]
-
         public void FindingTheIndexOfTheMinimumElement (int[] sourceArray, int expected)
         {
             ArrayList arrayList = new ArrayList();
@@ -326,7 +304,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1 }, new[] { 1 })]
         [TestCase(new[] { -78, 9, 0, 567, 1, 2 }, new[] { -78, 0, 1, 2, 9, 567 })]
         [TestCase(new[] { 0, 0, 0, 0 }, new[] { 0, 0, 0, 0 })]
-
         public void SortingInAscendingOrder (int[] sourceArray, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -336,7 +313,6 @@ namespace ArrayListTest
             }
 
             arrayList.SortAscending();
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -348,7 +324,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1 }, new[] { 1 })]
         [TestCase(new[] { -78, 9, 0, 567, 1, 2 }, new[] { 567, 9, 2, 1, 0, -78 })]
         [TestCase(new[] { 0, 0, 0, 0 }, new[] { 0, 0, 0, 0 })]
-
         public void SortingInDescendingOrder (int[] sourceArray, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -358,7 +333,6 @@ namespace ArrayListTest
             }
 
             arrayList.SortDescending();
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -369,7 +343,6 @@ namespace ArrayListTest
         [TestCase(new[] { 1, 2, 3, 4, 5, 6, 7 }, 2, 1, new[] { 1, 3, 4, 5, 6, 7 })]
         [TestCase(new[] { 4, 4, 3, 2, 1 }, 4, 0, new[] { 4, 3, 2, 1 })]
         [TestCase(new[] { 3, 4, 8, 7, 0 }, 0, 4, new[] { 3, 4, 8, 7 })]
-
         public void RemoveByValueOfFirst_ReturnIndex (int[] sourceArray, int NumberToRemove, int ExpectedIndex, int[] ArrayResult)
         {
             ArrayList arrayList = new ArrayList();
@@ -379,7 +352,6 @@ namespace ArrayListTest
             }
 
             int ReturnedIndex = arrayList.DeleteByValueFirstReturnIndex (NumberToRemove);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -403,7 +375,6 @@ namespace ArrayListTest
             }
 
             int ReturnedIndex = arrayList.DeleteByValueAll (NumberToRemove);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -425,7 +396,6 @@ namespace ArrayListTest
             }
 
             arrayList.AddingAListToTheEnd(AddArray);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -445,7 +415,6 @@ namespace ArrayListTest
             }
 
             arrayList.addingAListToTheBeginning(AddArray);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
@@ -467,7 +436,6 @@ namespace ArrayListTest
             }
 
             arrayList.AddListByIndex(index, AddArray);
-
             for (int i = 0; i < arrayList.Length; i++)
             {
                 Assert.AreEqual(arrayList[i], ArrayResult[i]);
