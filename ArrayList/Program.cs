@@ -8,14 +8,13 @@ namespace ArrayListMain
         static void Main(string[] args)
         {
             ArrayList proba1 = new ArrayList();
-            proba1.Add1(1);
-            proba1.Add1(3);
-            proba1.Add1(7);
-            proba1.Add1(9);
-            proba1.Add1(5);
-            proba1.Add1(2);
-            proba1.Add1(1);
-            proba1.sortAscending19();
+            proba1.AddEnd(1);
+            proba1.AddEnd(2);
+            proba1.AddEnd(3);
+            proba1.AddEnd(4);
+            proba1.AddEnd(5);
+            proba1.AddEnd(6);
+            proba1.DeleteIndex( 0 );
             proba1.Print();
         }
     }
